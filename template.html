@@ -28,9 +28,16 @@
       <!--This one seems to work all the time, but really small on ipad-->
       <!--<meta name="viewport" content="initial-scale=0.4">-->
       <meta name="apple-mobile-web-app-capable" content="yes">
+      
+      <!-- Use KateX for Tex support. Comment this lines if you don't need to render math -->
+      <link rel="stylesheet" href="js/katex/katex.min.css">
+      <script src="js/katex/katex.min.js"></script>
+      <!-- -->
+      
       <link rel="stylesheet" media="all" href="theme/css/default.css">
       <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
       <base target="_blank">
+      
       <!-- This amazingness opens all links in a new tab. -->
       <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
    </head>
@@ -164,6 +171,36 @@ function helloWorld(world) {
 </pre>
             </article>
          </slide>
+         
+         <slide>
+	  <hgroup>
+	    <h2>Using <span id="katexword"></span> for math rendering</h2>
+	    <script>
+	      katex.render("\\KaTeX", katexword);
+	    </script>
+	  </hgroup>
+	  <br/>
+	  <ul>
+	    <li><a href="http://khan.github.io/KaTeX/">KaTeX</a> is a fast JavaScript library for TeX math rendering on the web.</li>
+	    <li>To render a math expression, use <code>katex.render()</code>:</li>
+	  </ul>
+	  <article class="smaller">
+	      <pre class="prettyprint" data-lang="javascript">
+&lt;script type='text/javascript'&gt;
+  // elementId is the id of a DOM element to render into
+  katex.render("f(x) = \\int_{-\\infty}^\\infty \\hat f(\\xi) e^{2 \\pi i \\xi x} d\\xi", elementId);
+&lt;/script&gt;
+	      </pre>
+	    </article>
+	    <div class="centered">
+	      <p id="katexeq1"></p>
+	      <script>
+		katex.render("\\displaystyle f(x) = \\int_{-\\infty}^\\infty \\hat f(\\xi) e^{2 \\pi i \\xi x} d\\xi", katexeq1);
+	      </script>
+	    </div>
+	    
+         </slide>
+         
          <slide>
             <aside class="note">
                <section>
