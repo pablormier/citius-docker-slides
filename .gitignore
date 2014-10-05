@@ -32,6 +32,8 @@
 # OS generated files #
 ######################
 .DS_Store*
+.Rhistory
+.directory
 ehthumbs.db
 Icon?
 Thumbs.db
