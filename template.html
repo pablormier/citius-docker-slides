@@ -27,16 +27,16 @@
       <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
       <!--This one seems to work all the time, but really small on ipad-->
       <!--<meta name="viewport" content="initial-scale=0.4">-->
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      
-      <!-- Use KateX for Tex support. Comment this lines if you don't need to render math -->
-      <link rel="stylesheet" href="js/katex/katex.min.css">
-      <script src="js/katex/katex.min.js"></script>
-      <!-- -->
-      
+      <meta name="apple-mobile-web-app-capable" content="yes">      
       <link rel="stylesheet" media="all" href="theme/css/default.css">
       <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
       <base target="_blank">
+      
+      <!-- Use KateX for Tex support -->
+      <link rel="stylesheet" href="js/katex/katex.min.css">
+      <!-- TODO: Should be loaded with require.js -->
+      <script src="js/katex/katex.min.js" type="text/javascript"></script>
+      <!-- -->
       
       <!-- This amazingness opens all links in a new tab. -->
       <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
@@ -443,7 +443,7 @@ function helloWorld(world) {
          </slide>
          <slide class="fill nobackground" style="background-image: url(images/citius-building.jpg)">
             <hgroup>
-               <h2 class="white">Full Image (with Optional Header)</h2>
+               <h2 class="white quotebox">Full Image (with Optional Header)</h2>
             </hgroup>
             <footer class="source white">http://citius.usc.es</footer>
          </slide>

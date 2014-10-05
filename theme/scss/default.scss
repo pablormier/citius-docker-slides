@@ -846,6 +846,15 @@ article.smaller {
   }
 }
 
+/* Simple semi-transparent rectangle for quotes */
+
+.quotebox {
+  display: inline-block;
+  background: rgba(black, 0.4);
+  padding: 15px;
+  @include border-radius(10px);
+}
+
 aside.gdbar {
   height: 101px;
   width: 215px;
