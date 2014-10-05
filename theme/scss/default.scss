@@ -489,7 +489,8 @@ table {
   th {
     color: white;
     font-size: 18px;
-    @include background(linear-gradient(top, $brand-blue 40%, $brand-blue-secondary2 80%) no-repeat);
+    background-color: $brand-orange-citius;
+    /*@include background(linear-gradient(top, $brand-orange-citius 40%, $brand-orange-citius-secondary2 80%) no-repeat);*/
   }
 
   td, th {
@@ -499,7 +500,8 @@ table {
 
   td.highlight {
     color: $gray-4;
-    @include background(linear-gradient(top, $brand-yellow 40%, $brand-yellow-secondary2 80%) no-repeat);
+    background-color: $brand-orange-citius-light;
+    /*@include background(linear-gradient(top, #ffd14d, #fff) no-repeat);*/
   }
 
   &.rows {
@@ -523,6 +525,7 @@ q {
     margin-left: 0.1em;
   }
 }
+
 
 slide.fill {
   background-repeat: no-repeat;
