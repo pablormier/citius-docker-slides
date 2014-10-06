@@ -1,3 +1,7 @@
+# CiTIUS HTML5 Slide Template
+
+This is an experimental CiTIUS template based on the Google IO HTML5 Slides. The purpose of this template is to generate powerful web based presentations. This modification also includes the JavaScript library [KaTeX](https://github.com/Khan/KaTeX) to support TeX math rendering.
+
 ## Configuring the slides
 
 Much of the deck is customized by changing the settings in [`slide_config.js`](slide_config.js).
@@ -5,13 +9,6 @@ Some of the customizations include the title, Analytics tracking ID, speaker
 information (name, social urls, blog), web fonts to load, themes, and other
 general behavior.
 
-### Customizing the `#io12` hash
-
-The bottom of the slides include `#io12` by default. If you'd like to change
-this, please update the variable `$social-tags: '#io12';` in
-[`/theme/scss/default.scss`](theme/scss/default.scss).
-
-See the next section on "Editing CSS" before you go editing things.
 
 ## Editing CSS
 
@@ -34,7 +31,7 @@ First, install compass:
 Next, you'll want to watch for changes to the exiting .scss files in [`/theme/scss`](theme/scss)
 and any new one you add:
 
-    $ cd io-2012-slides
+    $ cd citius-html5-slides
     $ compass watch
 
 This command automatically recompiles the .scss file when you make a change.
@@ -57,7 +54,7 @@ The slides can be run locally from `file://` making development easy :)
 If at some point you should need a web server, use [`serve.sh`](serve.sh). It will
 launch a simple one and point your default browser to [`http://localhost:8000/template.html`](http://localhost:8000/template.html):
 
-    $ cd io-2012-slides
+    $ cd citius-html5-slides
     $ ./serve.sh
 
 You can also specify a custom port:
@@ -74,7 +71,3 @@ To enable presenter mode, add `presentme=true` to the URL: [http://localhost:800
 To disable presenter mode, hit [http://localhost:8000/template.html?presentme=false](http://localhost:8000/template.html?presentme=false)
 
 Presenter mode is sticky, so refreshing the page will persist your settings.
-
----
-
-That's all she wrote!
