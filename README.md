@@ -1,6 +1,6 @@
 # CiTIUS HTML5 Slide Template
 
-This is an experimental CiTIUS template based on the Google IO HTML5 Slides. The purpose of this template is to generate powerful web based presentations. This modification also includes the JavaScript library [KaTeX](https://github.com/Khan/KaTeX) to support TeX math rendering.
+This is an experimental CiTIUS template based on the Google IO HTML5 Slides. The purpose of this template is to generate powerful web based presentations. This modification also includes the JavaScript library [KaTeX](https://github.com/Khan/KaTeX) to support TeX math rendering. Demo: http://citiususc.github.io/citius-html5-slides/template.html
 
 ## Configuring the slides
 
