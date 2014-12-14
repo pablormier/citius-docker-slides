@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>   <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- [if it IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+  <link rel="shortcut icon" href="https://d3oypxn00j2a10.cloudfront.net/0.12.10/favicon_whale.png">
+  <link rel="canonical" href="http://www.docker.com/tryit/">
+  <title>Online Tutorial</title>
+  <link rel="stylesheet" href="https://d3oypxn00j2a10.cloudfront.net/0.12.10/css/c4a4081e9e31.css" type="text/css">
+  <link href="https://d3oypxn00j2a10.cloudfront.net/0.12.10/lib/css/jquery.terminal.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://d3oypxn00j2a10.cloudfront.net/0.12.10/css/tutorial-style.css">
+  <link rel="stylesheet" href="assets/theme.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/js/vendor/jquery-1.9.1.min.js"><\/script>')
+  </script>
+  <script type="text/javascript" src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/js/03e695dc6a6a.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="expand">
+            <div id="online-cli-tutorial">
+              <div id="overlay" class="row tutorial togglesize fullsize">
+                <div id="main">
+                  <div style="display: inherit;" id="leftside" class="left togglesize hide-when-small fullsize">
+                    <div id="step-indicator">
+                      <span>Step</span><span id="step-no">0</span>
+                    </div>
+                    <hr>
+                    <div id="progress-indicator" class="clearfix">
+                      <span id="marker-0" class="progress-marker active">0</span>
+                      <span id="marker-1" class="progress-marker">1</span><span id="marker-2" class="progress-marker">2</span><span id="marker-3" class="progress-marker">3</span><span id="marker-4" class="progress-marker">4</span><span id="marker-5" class="progress-marker">5</span>
+                      <span
+                      id="marker-6" class="progress-marker">6</span><span id="marker-7" class="progress-marker">7</span><span id="marker-8" class="progress-marker">8</span>
+                    </div>
+
+                    <div style="display: block;" id="instructions" class="text body">
+                      <h3>Docker Engine parts</h3> The Docker Engine consists of two parts: a daemon, a server process that manages all the containers, and a client, which acts as a remote control for the daemon.</div>
+
+                    <div id="assignment" class="text body">
+                      <h3>Assignment</h3> Check which version of Docker is running. This will verify that the daemon is running and that you can connect to it. If you can see the version number you know you are all set.</div>
+
+                    <hr>
+
+                    <div id="command">
+                      <div class="text">
+                        <h3>Show the answer</h3>
+                        <div id="commandShownText" class="hidden">docker version</div>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div id="tips">
+                      <div class="tiptext">
+                        <h3>Tips</h3>
+                        <div id="tipShownText" class="">Try typing <code>docker</code> to see the full list of accepted arguments. This emulator provides only a limited set of shell and Docker commands, so some commands may not work as expected.</div>
+                      </div>
+                    </div>
+
+                    <div id="ajax" class="">.</div>
+
+                  </div>
+                  <!-- end left -->
+
+                  <div style="display: none;" id="starttext" class="span4 togglesize hide-when-full fullsize">
+                    <p class="body">
+                    </p>
+                    <h1>In this 10-minute tutorial, see how Docker works first-hand:</h1>
+                    <p></p>
+                    <p class="small-body">
+                      You'll search for and find an image another user built and shared in the Docker Hub Registry, a cloud-based collection of applications.
+                    </p>
+                    <p class="small-body">
+                      You'll download and run it - running images are containers - and have it output 'hello world'.
+                    </p>
+                    <p class="small-body">
+                      Then you'll install the 'ping' utility into the container, commit all your changes, and run a test of your updated image.
+                    </p>
+                    <p class="small-body">
+                      Finally, you'll push your image to the Docker Hub Registry so that other developers can find and use it...
+                    </p>
+                    <p class="small-body">
+                      ...on a laptop, a VM in a data center, or a public cloud instance, without having to change anything at all about the image!
+                    </p>
+                    <div style="text-align: center">
+                      <a id="fullSizeOpen" href="#" class="btn primary-cta-button2">Start The Tutorial</a>
+                    </div>
+                  </div>
+
+                  <div id="rightside" class="span8">
+                    <div id="terminal-extenstion" class="right togglesize smallsize fullsize"></div>
+                    <div id="terminal" class="right togglesize smallsize terminal fullsize">
+                      <div class="terminal-output">
+
+                      </div>
+                    </div>
+                    <div id="results" class="results togglesize fullsize" style="display: none;">
+                      <div id="resulttext" class="text"></div>
+                      <button id="buttonNext" class="docker-btn-blue docker-btn-large" disabled="disabled" tabindex="0">next</button>
+                      <button id="buttonFinish" class="docker-btn-blue docker-btn-large hidden" tabindex="0">Finish and see what's next!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p></p>
+            </div>
+            <p></p>
+
+            <script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/lib/js/jquery-1.7.1.min.js"></script>
+            <script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/lib/js/jquery.mousewheel-min.js"></script>
+            <script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/lib/js/jquery.terminal-0.7.4.min.js"></script>
+            <script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/lib/js/sugar-1.3.9.min.js"></script>
+            <script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/js/terminal.js"></script>
+            <script src="https://d3oypxn00j2a10.cloudfront.net/0.12.10/js/steps.js"></script>
+
+            <p></p>
+          </div>
+          <p></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of wrap -->
+</body>
+
+</html>

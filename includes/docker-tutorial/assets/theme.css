@@ -1,0 +1,12 @@
+
+.terminal {
+  color: white;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.terminal .terminal-output div div, .terminal .prompt {
+  display: block;
+  line-height: 20px;
+  height: auto;
+}
