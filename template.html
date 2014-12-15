@@ -1,20 +1,20 @@
 <!--
    CiTIUS HTML5 Slide Template is based on the
-   GoogleIO Slide Template. 
-   
+   GoogleIO Slide Template.
+
    Original credits:
-   
+
        Google IO 2012/2013 HTML5 Slide Template
-   
+
        Authors: Eric Bidelman <ebidel@gmail.com>
    	    Luke Mahé <lukem@google.com>
-   
+
        URL: https://code.google.com/p/io-2012-slides
-       
-   
-   Modifications of the original GoogleIO HTML5 Slide Template 
+
+
+   Modifications of the original GoogleIO HTML5 Slide Template
    are released under the same license (Apache 2.0 License).
-   
+
    Pablo Rodríguez Mier
    -->
 <!DOCTYPE html>
@@ -27,11 +27,11 @@
       <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
       <!--This one seems to work all the time, but really small on ipad-->
       <!--<meta name="viewport" content="initial-scale=0.4">-->
-      <meta name="apple-mobile-web-app-capable" content="yes">      
+      <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" media="all" href="theme/css/default.css">
       <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
       <base target="_blank">
-      
+
       <!-- This amazingness opens all links in a new tab. -->
       <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
    </head>
@@ -98,160 +98,18 @@
                </ul>
             </article>
          </slide>
+
+
          <slide>
             <hgroup>
-               <h2>Slide with (Smaller Font)</h2>
-            </hgroup>
-            <article class="smaller">
-               <ul>
-                  <li>All <a href="http://citius.usc.es">links</a> open in new tabs.</li>
-                  <li>To change that this, add <code>target="_self"</code> to the link.</li>
-               </ul>
-            </article>
-         </slide>
-         <slide hidden>
-            Hidden slides are left out of the presentation.
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Code Slide (with Subtitle Placeholder)</h2>
-               <h3>Subtitle Placeholder</h3>
-            </hgroup>
-            <article>
-               <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-               <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-            </article>
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Code Slide (Smaller Font)</h2>
-            </hgroup>
-            <article class="smaller">
-               <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-               <pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-               <pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-            </article>
-         </slide>
-         
-         <slide>
-	  <hgroup>
-	    <h2>Using <span id="katexword"></span> for math rendering</h2>
-	    <script>
-	      katex.render("\\KaTeX", katexword);
-	    </script>
-	  </hgroup>
-	  <br/>
-	  <ul>
-	    <li><a href="http://khan.github.io/KaTeX/">KaTeX</a> is a fast JavaScript library for TeX math rendering on the web.</li>
-	    <li>To render a math expression, use <code>katex.render()</code>:</li>
-	  </ul>
-	  <article class="smaller">
-	      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // elementId is the id of a DOM element to render into
-  katex.render("f(x) = \\int_{-\\infty}^\\infty \\hat f(\\xi) e^{2 \\pi i \\xi x} d\\xi", elementId);
-&lt;/script&gt;
-	      </pre>
-	    </article>
-	    <div class="centered">
-	      <p id="katexeq1"></p>
-	      <script>
-		katex.render("\\displaystyle f(x) = \\int_{-\\infty}^\\infty \\hat f(\\xi) e^{2 \\pi i \\xi x} d\\xi", katexeq1);
-	      </script>
-	    </div>
-	    
-         </slide>
-         
-         <slide>
-            <aside class="note">
-               <section>
-                  <ul>
-                     <li>Point I wanted to make #1</li>
-                     <li>Point I wanted to make #2</li>
-                     <li>Point I wanted to make #3</li>
-                     <li>Example <a href="#">link</a> in notes.</li>
-                  </ul>
-                  <p><b>Remember to say this tag line!</b></p>
-               </section>
-            </aside>
-            <hgroup>
-               <h2>Slide with Speaker Notes</h2>
-            </hgroup>
-            <article>
-               <p>Press 'p' to toggle speaker notes.</p>
-            </article>
-         </slide>
-         <slide>
-            <aside class="note">
-               <section>
-                  <ul>
-                     <li>See this amazing link: <a href="http://citius.usc.es">link</a>.</li>
-                  </ul>
-                  <p><b>Remember to say this tag line!</b></p>
-               </section>
-            </aside>
-            <hgroup>
-               <h2>Presenter Mode</h2>
-            </hgroup>
-            <article>
-               <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-                  This setting is sticky, meaning refreshing the page will persist presenter
-                  mode.
-               </p>
-               <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
-            </article>
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Slide with Image</h2>
-            </hgroup>
-            <article>
-               <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-               <footer class="source">source: place source info here</footer>
-            </article>
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Slide with Image (Centered horz/vert)</h2>
+               <h2>Docker vs Virtual Machines</h2>
             </hgroup>
             <article class="flexbox vcenter">
-               <img src="images/barchart.png" alt="Description" title="Description">
-               <footer class="source">source: place source info here</footer>
+               <img src="images/docker/docker-vs-vm-transparent.png" class="reflect" alt="Description" title="Description">
+               <footer class="source">source: docker.com</footer>
             </article>
          </slide>
+         
          <slide>
             <hgroup>
                <h2>Table Option A</h2>
@@ -475,8 +333,8 @@ function helloWorld(world) {
          </slide>
          <slide class="backdrop"></slide>
       </slides>
-      
-      
+
+
       <!--[if IE]>
       <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
       <script>CFInstall.check({mode: 'overlay'});</script>
