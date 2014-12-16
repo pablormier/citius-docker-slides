@@ -19,327 +19,155 @@
    -->
 <!DOCTYPE html>
 <html>
-   <head>
-      <title></title>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="chrome=1">
-      <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-      <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-      <!--This one seems to work all the time, but really small on ipad-->
-      <!--<meta name="viewport" content="initial-scale=0.4">-->
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" media="all" href="theme/css/default.css">
-      <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
-      <base target="_blank">
 
-      <!-- This amazingness opens all links in a new tab. -->
-      <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
-   </head>
-   <body style="opacity: 0">
-      <slides class="layout-widescreen">
-         <slide class="logoslide nobackground">
-            <article class="flexbox vcenter">
-               <span><img src="images/vector/svg/logo_CiTIUS.svg"></span>
-            </article>
-         </slide>
-         <slide class="title-slide segue nobackground">
-            <aside class="gdbar"><img src="images/citius-logo-128.png"></aside>
-            <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-            <hgroup class="auto-fadein">
-               <h1 data-config-title>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank">
+
+  <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    <slide class="logoslide nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/vector/svg/logo_CiTIUS.svg"></span>
+      </article>
+    </slide>
+    <slide class="title-slide segue nobackground">
+      <aside class="gdbar"><img src="images/citius-logo-128.png">
+      </aside>
+      <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+      <hgroup class="auto-fadein">
+        <h1 data-config-title>
                   <!-- populated from slide_config.json -->
                </h1>
-               <h2 data-config-subtitle>
+        <h2 data-config-subtitle>
                   <!-- populated from slide_config.json -->
                </h2>
-               <p data-config-presenter>
-                  <!-- populated from slide_config.json -->
-               </p>
-            </hgroup>
-         </slide>
+        <p data-config-presenter>
+          <!-- populated from slide_config.json -->
+        </p>
+      </hgroup>
+    </slide>
 
-         <slide>
-           <hgroup>
-             <h2>Motivation</h2>
-           </hgroup>
-           <article class="flexbox vcenter">
-             <p>We want to ship our working software to different places as fast as possible</p>
-             <img src="images/docker/deploy.svg" alt="Description" title="Description">
-           </article>
-         </slide>
+    <slide>
+      <hgroup>
+        <h2>Motivation</h2>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <p>We want to ship our working software to different places as fast as possible</p>
+        <img src="images/docker/deploy.svg" alt="Description" title="Description">
+      </article>
+    </slide>
 
-         <slide>
-            <hgroup>
-               <h2>Main problems</h2>
-            </hgroup>
-            <article>
-               <ul class="build">
-                  <li>Moving from development to production is hard!</li>
-                    <ul>
-                      <li>Conflicting libraries / different versions</li>
-                      <li>Different Operating Systems</li>
-                      <li>Different versions of databases</li>
-                      <li>...</li>
-                    </ul>
-                  <li>Creating, updating and mantaining the full software stack is hard!</li>
-                    <ul>
-                      <li>A project usually contains many libraries, databases, services...</li>
-                      <li>Hard to keep a reproducible version of a project</li>
-                    </ul>
-                  <li>Testing / Continuous integration / Continuous deployment is hard!</li>
-               </ul>
-            </article>
-         </slide>
+    <slide>
+      <hgroup>
+        <h2>Main problems</h2>
+      </hgroup>
+      <article>
+        <ul class="build">
+          <li>Moving from development to production is hard!</li>
+          <ul>
+            <li>Conflicting libraries / different versions</li>
+            <li>Different Operating Systems</li>
+            <li>Different versions of databases</li>
+            <li>...</li>
+          </ul>
+          <li>Creating, updating and mantaining the full software stack is hard!</li>
+          <ul>
+            <li>A project usually contains many libraries, databases, services...</li>
+            <li>Hard to keep a reproducible version of a project</li>
+          </ul>
+          <li>Testing / Continuous integration / Continuous deployment is hard!</li>
+        </ul>
+      </article>
+    </slide>
 
-         <slide>
-           <hgroup>
-             <h2>How to solve it (DIY)</h2>
-           </hgroup>
-           <article>
-             <p>Do-It-Yourself!</p>
-             <ul class="build">
-                 <li>1- Copy/install dependencies (manually/scripts)</li>
-                 <li>2- Prepare databases</li>
-                 <li>3- Install the latest version of the project</li>
-                 <li>4- Configure properties
-                 <li>5- Try it!
-                 <li>6- Ouch! something is missing, it does not work! </li>
-                 <li>7- Fix errors</li>
-                 <li>8- Repeat again until everything is working</li>
-                 <li>9- Write manuals to help other people configuring the whole monster</li>
-             </ul>
-           </article>
-         </slide>
+    <slide>
+      <hgroup>
+        <h2>How to solve it (DIY)</h2>
+      </hgroup>
+      <article>
+        <p>Do-It-Yourself!</p>
+        <ul class="build">
+          <li>1- Copy/install dependencies (manually/scripts)</li>
+          <li>2- Prepare databases</li>
+          <li>3- Install the latest version of the project</li>
+          <li>4- Configure properties
+            <li>5- Try it!
+              <li>6- Ouch! something is missing, it does not work! </li>
+              <li>7- Fix errors</li>
+              <li>8- Repeat again until everything is working</li>
+              <li>9- Write manuals to help other people configuring the whole monster</li>
+        </ul>
+      </article>
+    </slide>
 
-         <slide>
-           <hgroup>
-             <h2>How to solve it (Virtual Machines)</h2>
-           </hgroup>
-           <article class="flexbox vcenter">
-             <p>We want to ship our working software to different places as fast as possible</p>
-             <img src="images/docker/solve-it-vm.svg" alt="Description" title="Description">
-           </article>
-         </slide>
+    <slide>
+      <hgroup>
+        <h2>How to solve it (Virtual Machines)</h2>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <p>Package everything in a VM and deploy it in different environments</p>
+        <img src="images/docker/vm-deploy.png" alt="Description" title="Description">
+      </article>
+    </slide>
 
+    <slide>
+      <hgroup>
+        <h2>VM - Disadvantages</h2>
+      </hgroup>
+      <article>
+        <ul class="build">
+          <li>Heavy. How many VMs can you run in your laptop?</li>
+          <li>Overhead. Full virtualized OS (I/O, resources...)</li>
+          <li>Size. Usually many GBs for each VM</li>
+          <li>Portability problems. Different virtualization solutions</li>
+          <li>Management. Hard to mantain / config / reuse different versions of each VM</li>
+        </ul>
+        <ul class="build">
+          <p>Management problems can be solved with Vagrant, Chef, Puppet...</p>
+          <img src="images/logos/logos.png" style="display: block; margin: 0 auto;">
+        </ul>
+      </article>
+    </slide>
 
-         <!--
-         <slide>
-            <hgroup>
-               <h2>Slide with Bullets that Build</h2>
-               <h3>Subtitle Placeholder</h3>
-            </hgroup>
-            <article>
-               <p>A list where items build:</p>
-               <ul class="build">
-                  <li>Pressing 'h' highlights code snippets</li>
-                  <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-                  <li>Pressing 'f' toggles fullscreen viewing</li>
-                  <li>Pressing 'w' toggles widescreen</li>
-                  <li>Pressing 'o' toggles overview mode</li>
-                  <li>Pressing 'ESC' toggles off these goodies</li>
-               </ul>
-               <p>Another list, but items fade as they build:</p>
-               <ul class="build fade">
-                  <li>Hover over me!</li>
-                  <li>Hover over me!</li>
-                  <li>Hover over me!</li>
-               </ul>
-            </article>
-         </slide>
-          -->
+    <slide>
+      <hgroup>
+        <h2>How to solve it (Docker)</h2>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <p>Package everything in LXC containers</p>
+        <img src="images/docker/docker-deploy.png" alt="Description" title="Description">
+      </article>
+    </slide>
 
-
-         <slide>
-            <hgroup>
-               <h2>Docker vs Virtual Machines</h2>
-            </hgroup>
-            <article class="flexbox vcenter">
-               <img src="images/docker/docker-vs-vm-transparent.png" alt="Description" title="Description">
-               <footer class="source">source: docker.com</footer>
-            </article>
-         </slide>
-
-         <slide>
-            <hgroup>
-               <h2>Table Option A</h2>
-               <h3>Subtitle Placeholder</h3>
-            </hgroup>
-            <article>
-               <table>
-                  <tr>
-                     <th></th>
-                     <th>Column 1</th>
-                     <th>Column 2</th>
-                     <th>Column 3</th>
-                     <th>Column 4</th>
-                  </tr>
-                  <tr>
-                     <td>Row 1</td>
-                     <td>placeholder</td>
-                     <td class="highlight">placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 2</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 3</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 4</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 5</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-               </table>
-            </article>
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Table Option A (Smaller Text)</h2>
-               <h3>Subtitle Placeholder</h3>
-            </hgroup>
-            <article class="smaller">
-               <table>
-                  <tr>
-                     <th></th>
-                     <th>Column 1</th>
-                     <th>Column 2</th>
-                     <th>Column 3</th>
-                     <th>Column 4</th>
-                  </tr>
-                  <tr>
-                     <td>Row 1</td>
-                     <td>placeholder</td>
-                     <td class="highlight">placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 2</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 3</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 4</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <td>Row 5</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-               </table>
-            </article>
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Table Option B</h2>
-               <h3>Subtitle Placeholder</h3>
-            </hgroup>
-            <article>
-               <table class="rows">
-                  <tr>
-                     <th>Header 1</th>
-                     <td>placeholder</td>
-                     <td class="highlight">placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <th>Header 2</th>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <th>Header 3</th>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <th>Header 4</th>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-                  <tr>
-                     <th>Header 5</th>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                     <td>placeholder</td>
-                  </tr>
-               </table>
-            </article>
-         </slide>
-         <slide>
-            <hgroup>
-               <h2>Slide Styles</h2>
-            </hgroup>
-            <article class="smaller">
-               <div class="columns-2">
-                  <ul>
-                     <li class="red">class="red"</li>
-                     <li class="red2">class="red2"</li>
-                     <li class="red3">class="red3"</li>
-                     <li class="blue">class="blue"</li>
-                     <li class="blue2">class="blue2"</li>
-                     <li class="blue3">class="blue3"</li>
-                     <li class="green">class="green"</li>
-                     <li class="green2">class="green2"</li>
-                  </ul>
-                  <ul>
-                     <li class="green3">class="green3"</li>
-                     <li class="yellow">class="yellow"</li>
-                     <li class="yellow2">class="yellow2"</li>
-                     <li class="yellow3">class="yellow3"</li>
-                     <li class="gray">class="gray"</li>
-                     <li class="gray2">class="gray2"</li>
-                     <li class="gray3">class="gray3"</li>
-                     <li class="gray4">class="gray4"</li>
-                  </ul>
-               </div>
-               <div class="centered" style="margin-top:2em">
-                  I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-               </div>
-            </article>
-         </slide>
+    <slide>
+      <hgroup>
+        <h2>Docker vs Virtual Machines</h2>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <img src="images/docker/docker-vs-vm-transparent.png" alt="Description" title="Description">
+        <footer class="source">source: docker.com</footer>
+      </article>
+    </slide>
+    <!--
          <slide class="segue dark nobackground">
             <aside class="gdbar"><img src="images/citius-logo-128.png"></aside>
             <hgroup class="auto-fadein">
-               <h2>Segue Slide</h2>
-               <h3>Subtitle Placeholder</h3>
+               <h2>Docker.com tutorial</h2>
+               <h3>Learn the basics of docker</h3>
             </hgroup>
          </slide>
          <slide class="fill nobackground" style="background-image: url(images/citius-building.jpg)">
@@ -348,45 +176,36 @@
             </hgroup>
             <footer class="source white">http://citius.usc.es</footer>
          </slide>
-         <slide class="segue dark quote nobackground">
-            <aside class="gdbar right bottom"><img src="images/citius-logo-128.png"></aside>
-            <article class="flexbox vleft auto-fadein">
-               <q>
-               This is an example of quote text.
-               </q>
-               <div class="author">
-                  Name<br>
-                  Company
-               </div>
-            </article>
-         </slide>
-         <slide>
-	    <article>
-		<iframe data-src="includes/docker-tutorial/docker-tutorial.html"></iframe>
-	    </article>
-         </slide>
-         <slide class="thank-you-slide segue nobackground">
-            <aside class="gdbar right"><img src="images/citius-logo-128.png"></aside>
-            <article class="flexbox vleft auto-fadein">
-               <h2>&lt;Thank You!&gt;</h2>
-               <p>Important contact information goes here.</p>
-            </article>
-            <p class="auto-fadein" data-config-contact>
-               <!-- populated from slide_config.json -->
-            </p>
-         </slide>
-         <slide class="logoslide dark nobackground">
-            <article class="flexbox vcenter">
-               <span><img src="images/vector/svg/logo_CiTIUS_blanco.svg"></span>
-            </article>
-         </slide>
-         <slide class="backdrop"></slide>
-      </slides>
+       -->
+    <slide class="segue dark quote nobackground">
+      <aside class="gdbar right bottom"><img src="images/citius-logo-128.png">
+      </aside>
+      <article class="flexbox vleft auto-fadein">
+        <h1 style="font-size: 50px;">Online docker tutorial</h1>
+        <div class="author">
+          https://www.docker.com/tryit
+        </div>
+      </article>
+    </slide>
+    <slide>
+      <article>
+        <iframe data-src="includes/docker-tutorial/docker-tutorial.html"></iframe>
+      </article>
+    </slide>
+
+    <slide class="logoslide dark nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/vector/svg/logo_CiTIUS_blanco.svg"></span>
+      </article>
+    </slide>
+    <slide class="backdrop"></slide>
+  </slides>
 
 
-      <!--[if IE]>
+  <!--[if IE]>
       <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
       <script>CFInstall.check({mode: 'overlay'});</script>
       <![endif]-->
-   </body>
+</body>
+
 </html>
