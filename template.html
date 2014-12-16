@@ -57,24 +57,72 @@
                </p>
             </hgroup>
          </slide>
+
+         <slide>
+           <hgroup>
+             <h2>Motivation</h2>
+           </hgroup>
+           <article class="flexbox vcenter">
+             <p>We want to ship our working software to different places as fast as possible</p>
+             <img src="images/docker/deploy.svg" alt="Description" title="Description">
+           </article>
+         </slide>
+
          <slide>
             <hgroup>
-               <h2>Slide with Bullets</h2>
+               <h2>Main problems</h2>
             </hgroup>
             <article>
-               <ul>
-                  <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-                  <li>
-                     Title capitalization is title case
-                     <ul>
-                        <li>Subtitle capitalization is title case</li>
-                     </ul>
-                  </li>
-                  <li>Subtitle capitalization is title case</li>
-                  <li>Titles and subtitles should never have a period at the end</li>
+               <ul class="build">
+                  <li>Moving from development to production is hard!</li>
+                    <ul>
+                      <li>Conflicting libraries / different versions</li>
+                      <li>Different Operating Systems</li>
+                      <li>Different versions of databases</li>
+                      <li>...</li>
+                    </ul>
+                  <li>Creating, updating and mantaining the full software stack is hard!</li>
+                    <ul>
+                      <li>A project usually contains many libraries, databases, services...</li>
+                      <li>Hard to keep a reproducible version of a project</li>
+                    </ul>
+                  <li>Testing / Continuous integration / Continuous deployment is hard!</li>
                </ul>
             </article>
          </slide>
+
+         <slide>
+           <hgroup>
+             <h2>How to solve it (DIY)</h2>
+           </hgroup>
+           <article>
+             <p>Do-It-Yourself!</p>
+             <ul class="build">
+                 <li>1- Copy/install dependencies (manually/scripts)</li>
+                 <li>2- Prepare databases</li>
+                 <li>3- Install the latest version of the project</li>
+                 <li>4- Configure properties
+                 <li>5- Try it!
+                 <li>6- Ouch! something is missing, it does not work! </li>
+                 <li>7- Fix errors</li>
+                 <li>8- Repeat again until everything is working</li>
+                 <li>9- Write manuals to help other people configuring the whole monster</li>
+             </ul>
+           </article>
+         </slide>
+
+         <slide>
+           <hgroup>
+             <h2>How to solve it (Virtual Machines)</h2>
+           </hgroup>
+           <article class="flexbox vcenter">
+             <p>We want to ship our working software to different places as fast as possible</p>
+             <img src="images/docker/solve-it-vm.svg" alt="Description" title="Description">
+           </article>
+         </slide>
+
+
+         <!--
          <slide>
             <hgroup>
                <h2>Slide with Bullets that Build</h2>
@@ -98,6 +146,7 @@
                </ul>
             </article>
          </slide>
+          -->
 
 
          <slide>
@@ -105,11 +154,11 @@
                <h2>Docker vs Virtual Machines</h2>
             </hgroup>
             <article class="flexbox vcenter">
-               <img src="images/docker/docker-vs-vm-transparent.png" class="reflect" alt="Description" title="Description">
+               <img src="images/docker/docker-vs-vm-transparent.png" alt="Description" title="Description">
                <footer class="source">source: docker.com</footer>
             </article>
          </slide>
-         
+
          <slide>
             <hgroup>
                <h2>Table Option A</h2>

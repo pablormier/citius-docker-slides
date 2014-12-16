@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Empaquetando servicios<br>con Docker',
+    title: 'Packaging software<br>with Docker',
     subtitle: 'Software Development Level Up! 2',
     //eventInfo: {
     //  title: 'Doctoral Meeting',
